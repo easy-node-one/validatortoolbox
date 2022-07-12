@@ -71,6 +71,15 @@ def loaderIntro():
     print(p)
 
 
+def configFound():
+    p = f"""
+    {stringStars()}
+    * Configuration file detected, loading the validatortoolbox menu application.
+    {stringStars()}
+    """
+    print(p)
+
+
 def installHmyApp(harmonyDirPath):
     os.chdir(f"{harmonyDirPath}")
     os.system("curl -LO https://harmony.one/hmycli && mv hmycli hmy && chmod +x hmy")
