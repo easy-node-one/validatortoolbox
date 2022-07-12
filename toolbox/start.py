@@ -4,7 +4,7 @@ import dotenv
 from os import environ
 from dotenv import load_dotenv
 from utils.config import validatorToolbox
-from utils.library import loaderIntro, setWalletEnv, askYesNo, loadVarFile, firstSetup, printStars, recheckVars, passphraseStatus, recoverWallet
+from utils.library import loaderIntro, setWalletEnv, askYesNo, loadVarFile, firstSetup, printStars, stringStars, recheckVars, passphraseStatus, recoverWallet
 from utils.toolbox import runRegularNode, runFullNode
 
 # load_dotenv("~/.easynode.env")
@@ -19,13 +19,13 @@ if __name__ == "__main__":
         recoverWallet()
         if not environ.get("VALIDATOR_WALLET"):
             print(
-                "* You don't currently have a validator wallet address loaded in your .env file, please edit ~/.easynode.env and add a line with the following info:\n "
-                + "* VALIDATOR_WALLET='validatorONEaddress' "
+                "  * You don't currently have a validator wallet address loaded in your .env file, please edit ~/.easynode.env and add a line with the following info:\n "
+                + "  * VALIDATOR_WALLET='validatorONEaddress' "
             )
             input("* Press any key to exit.")
             raise SystemExit(0)
-    print("* Configuration file detected, loading the validatortoolbox menu application.")
-    printStars()
+    print("  * Configuration file detected, loading the validatortoolbox menu application.")
+    stringStars()
     if environ.get("SETUP_STATUS") != "2":
         recheckVars()
         passphraseStatus()
