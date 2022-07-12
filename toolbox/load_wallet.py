@@ -3,7 +3,7 @@ import dotenv
 from os import environ
 from utils.config import validatorToolbox
 from utils.installer import firstSetup, printStars, recheckVars, recoverWallet, passphraseSet
-from utils.shared import loaderIntro, setWalletEnv, askYesNo, passphraseStatus
+from utils.library import loaderIntro, setWalletEnv, askYesNo, passphraseStatus
 from utils.toolbox import runRegularNode, runFullNode
 
 if __name__ == "__main__":

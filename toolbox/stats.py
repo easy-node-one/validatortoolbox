@@ -3,7 +3,7 @@ from os import environ
 from ast import literal_eval
 from datetime import datetime
 from utils.config import validatorToolbox
-from utils.shared import loadVarFile, stringStars
+from utils.library import loadVarFile, stringStars
 from utils.toolbox import shardStats
 from subprocess import PIPE, run
 
