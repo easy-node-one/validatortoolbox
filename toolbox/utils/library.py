@@ -13,7 +13,9 @@ from pathlib import Path
 from pyhmy import validator, account, staking, numbers
 from json import load, dump
 
+
 load_dotenv("~/.easynode.env")
+
 
 class PrintStuff:
 
@@ -37,6 +39,7 @@ class PrintStuff:
     @classmethod
     def printWhiteSpace(self) -> None:
         print("\n" * 8)
+
 
 printWhiteSpace = PrintStuff.printWhiteSpace
 printStars = PrintStuff().printStars
@@ -87,7 +90,6 @@ def updateHarmonyConf(fileName, originalText, newText):
 
     with open(fileName, 'w') as f:
         f.write(newdata)
-
 
 
 def installHarmonyApp(harmonyDirPath, blsKeyFile):
@@ -200,7 +202,6 @@ def passphraseSet():
     save_text(validatorToolbox.passwordPath, password1)
     loadVarFile()
     passphraseStatus()
-    
 
 
 def process_command(command: str) -> None:
@@ -370,6 +371,7 @@ def setAPIPaths(dotenv_file):
         dotenv.set_key(dotenv_file, "NETWORK_0_CALL", f"{validatorToolbox.hmyAppPath} --node='https://api.s0.{environ.get('NETWORK_SWITCH')}.hmny.io' ")
         dotenv.set_key(dotenv_file, "NETWORK_S_CALL", f"{validatorToolbox.hmyAppPath} --node='https://api.s{environ.get('SHARD')}.{environ.get('NETWORK_SWITCH')}.hmny.io' ")
 
+
 def getValidatorInfo():
     if environ.get("NETWORK") == "mainnet":
         endpoint = len(validatorToolbox.rpc_endpoints)
@@ -501,6 +503,7 @@ def getSignPercent() -> str:
         outputStripped = "0"
         return str(outputStripped)
 
+
 def firstSetup():
     os.system("touch ~/.easynode.env")
     # first run stuff
@@ -528,6 +531,7 @@ def recheckVars():
     setMainOrTest(validatorToolbox.dotenv_file)
     setAPIPaths(validatorToolbox.dotenv_file)
     loadVarFile()
+
 
 def checkForInstall() -> str:
     loadVarFile()
@@ -582,7 +586,6 @@ def checkForInstall() -> str:
             printStars()
             cloneShards()
             finish_node_install()
-
 
 
 def installHarmony() -> None:
@@ -730,7 +733,6 @@ def restoreWallet() -> str:
         printStars()
         print("* Wallet already setup for this user account")
 
-  
 
 def recoverWallet():
     recoveryType()
