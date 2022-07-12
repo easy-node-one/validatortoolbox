@@ -24,9 +24,11 @@ if __name__ == "__main__":
             )
             input("* Press any key to exit.")
             raise SystemExit(0)
-    stringStars()
-    print("* Configuration file detected, loading the validatortoolbox menu application.")
-    stringStars()
+    print(f"""
+    {stringStars()}
+    * Configuration file detected, loading the validatortoolbox menu application.
+    {stringStars()}
+    """)
     if environ.get("SETUP_STATUS") != "2":
         recheckVars()
         passphraseStatus()
