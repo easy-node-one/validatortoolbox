@@ -1,10 +1,7 @@
 import os
-import time
-import dotenv
 from os import environ
-from dotenv import load_dotenv
 from utils.config import validatorToolbox
-from utils.library import loaderIntro, setWalletEnv, askYesNo, loadVarFile, firstSetup, printStars, stringStars, recheckVars, passphraseStatus, recoverWallet, configFound
+from utils.library import loaderIntro, setWalletEnv, askYesNo, loadVarFile, firstSetup, recheckVars, passphraseStatus, recoverWallet, configFound
 from utils.toolbox import runRegularNode, runFullNode
 
 # load_dotenv("~/.easynode.env")
